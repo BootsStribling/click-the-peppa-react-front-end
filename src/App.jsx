@@ -55,11 +55,16 @@ const App = () => {
     .then(peppa => setClickCount(peppa.count))
     .catch(error => console.log(error))
   }
+  
+
+
 
   return (
     <>
-      
-      <button onClick={clickThaPeppa}>Click the peppa, clicked {clickCount} times.</button>
+      {clickedPeppa
+      ? <button disabled>Quit clickin tha peppa</button>
+      : <button onClick={clickThaPeppa}>Click the peppa</button>
+    }
     </>
   )
 }
