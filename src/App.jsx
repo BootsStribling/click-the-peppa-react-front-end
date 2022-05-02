@@ -1,7 +1,8 @@
-import { Routes } from 'react-router-dom'
 import { useState, useEffect } from 'react'
+import * as peppaServices from './services/peppaServices'
 
 const App = () => {
+  const [clickCount, setClickCount] = useState(0)
   const [clickedPeppa, setClickedPeppa] = useLocalStorage("clicked", false)
   // Custom hook
   // https://usehooks.com/useLocalStorage/
@@ -42,7 +43,9 @@ const App = () => {
   }
 
   useEffect(()=> {
-    setClickedPeppa(false)
+    // setClickedPeppa(false)
+    peppaServices.getPeppa()
+    .then(peppa => setClickCount(peppa[0].count))
   }, [])
 
   const clickThaPeppa = () => setClickedPeppa(true)
