@@ -23,6 +23,24 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.peppa-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+}
+.peppa-button{
+  background: none;
+  border: none;
+}
+
+.peppa{
+  width: 30vw;
+  height: auto;
+}
 
 .App-link {
   color: #61dafb;
@@ -36,3 +54,5 @@
     transform: rotate(360deg);
   }
 }
+
+

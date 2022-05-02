@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import * as peppaServices from './services/peppaServices'
+import './App.css'
 
 const App = () => {
   const [clickCount, setClickCount] = useState(0)
@@ -61,10 +62,23 @@ const App = () => {
 
   return (
     <>
-      {clickedPeppa
-      ? <button disabled>Quit clickin tha peppa</button>
-      : <button onClick={clickThaPeppa}>Click the peppa</button>
-    }
+      {clickedPeppa ?
+        <div className='peppa-container'>
+          <button className='peppa-button' disabled><img className='peppa' src='../assets/images/quit-clickin.png' alt="quit clickin'"/></button>
+          <h1>Yay! Thanks for clicking the Peppa!</h1>
+          <h2>The Peppa has been clicked: </h2> 
+          <h2>{clickCount ? clickCount + ' times' : 'Please hold... Counting your nasty fingers.'}</h2>
+          <p>Come back tomorrow to click the Peppa again.</p>
+        </div>
+      :
+        <div className='peppa-container'>
+            <button className='peppa-button' onClick={clickThaPeppa}><img className='peppa' src='../assets/images/peppa-nobg.png' alt='pepper'/></button>
+            <h1> </h1>
+            <h2> </h2>
+            <h2> </h2>
+            <p> </p>
+        </div>
+      }
     </>
   )
 }
