@@ -58,7 +58,8 @@ const App = () => {
 
   return (
     <>
-      <button onClick={clickThaPeppa}>Click the peppa</button>
+      
+      <button onClick={clickThaPeppa}>Click the peppa, clicked {clickCount} times.</button>
     </>
   )
 }
