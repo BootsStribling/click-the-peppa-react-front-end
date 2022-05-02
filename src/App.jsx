@@ -46,9 +46,15 @@ const App = () => {
     // setClickedPeppa(false)
     peppaServices.getPeppa()
     .then(peppa => setClickCount(peppa[0].count))
+    .catch(error => console.log(error))
   }, [])
 
-  const clickThaPeppa = () => setClickedPeppa(true)
+  const clickThaPeppa = () => {
+    setClickedPeppa(true)
+    peppaServices.updatePeppa()
+    .then(peppa => setClickCount(peppa.count))
+    .catch(error => console.log(error))
+  }
 
   return (
     <>
